@@ -1,6 +1,7 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { CommonEngine } from '@angular/ssr';
 import express from 'express';
+import cors from 'cors'; // Import CORS middleware
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
@@ -14,16 +15,26 @@ export function app(): express.Express {
 
   const commonEngine = new CommonEngine();
 
+  // Use CORS to allow requests from your Angular app (localhost:4200)
+  server.use(
+    cors({
+      origin: 'http://localhost:4200', // Allow requests from this origin
+      methods: 'GET,POST,PUT,DELETE', // Allowed methods
+      credentials: true, // Allow cookies or authorization headers
+    })
+  );
+
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
-  server.get('**', express.static(browserDistFolder, {
-    maxAge: '1y',
-    index: 'index.html',
-  }));
+  server.get(
+    '**',
+    express.static(browserDistFolder, {
+      maxAge: '1y',
+      index: 'index.html',
+    })
+  );
 
   // All regular routes use the Angular engine
   server.get('**', (req, res, next) => {

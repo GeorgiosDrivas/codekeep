@@ -1,0 +1,15 @@
+label {
+  display: block;
+}
+
+input {
+  width: 250px;
+}
+
+.form-submit-button {
+  background-color: #faff05;
+  border: none;
+  width: 150px;
+  height: 40px;
+  text-transform: uppercase;
+}

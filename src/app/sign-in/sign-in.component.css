@@ -1,0 +1,19 @@
+.form-submit-button {
+  background-color: #faff05;
+  border: none;
+  width: 150px;
+  height: 40px;
+  text-transform: uppercase;
+}
+
+label {
+  display: block;
+}
+.sign-up-a {
+  color: #000;
+  cursor: pointer;
+}
+
+input {
+  width: 250px;
+}

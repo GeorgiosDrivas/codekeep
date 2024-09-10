@@ -1,0 +1,46 @@
+<div class="row p-0 m-0">
+  <div class="col-12 p-0">
+    <div class="mt-5">
+      <h2 class="text-center">Create a free account</h2>
+    </div>
+  </div>
+  <div class="col-12 p-0">
+    <div
+      class="mt-5 form-wrap d-flex flex-column justify-contnent-center align-items-center"
+    >
+      <form
+        (submit)="submit()"
+        class="d-flex flex-column justify-content-center align-items-center"
+      >
+        <div class="mb-4">
+          <label for="fullName">Full name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullNameField"
+            [(ngModel)]="fullNameField"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="Username">Username</label>
+          <input
+            type="text"
+            id="Username"
+            name="usernameField"
+            [(ngModel)]="usernameField"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="Password">Password</label>
+          <input
+            type="password"
+            id="Password"
+            name="passwordField"
+            [(ngModel)]="passwordField"
+          />
+        </div>
+        <button class="form-submit-button mb-3" type="submit">Sign up</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+.snippets-wrap {
+  border-top: 1px solid #000;
+  cursor: pointer;
+}
+
+.sidebar-wrap {
+  border-right: 1px solid #000;
+  height: 89.3vh;
+}
+
+.code-wrap {
+  width: 100%;
+  height: 80vh;
+  border: 1px solid #000;
+}
+
+.selected-snippet-title {
+  font-size: 15px;
+  margin: 0;
+}
+
+.new-snippet-button {
+  background-color: #faff05;
+  border: none;
+  width: 150px;
+  height: 40px;
+  text-transform: uppercase;
+}
+
+label {
+  display: block;
+}
+
+#content {
+  width: 100%;
+}
+
+#newSnippetForm input {
+  width: 250px;
+}
+
+.action-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.snippet-search-wrap {
+  overflow-y: scroll;
+}

@@ -1,0 +1,13 @@
+.nav-wrap {
+  background-color: #383636;
+  color: #fff;
+  min-height: 100px;
+}
+
+.nav-ul {
+  list-style-type: none;
+}
+
+.settings-svgs {
+  cursor: pointer;
+}

@@ -1,0 +1,41 @@
+<div class="row p-0 m-0">
+  <div class="col-12 p-0">
+    <div class="mt-5">
+      <h2 class="text-center">Sign in Form</h2>
+    </div>
+  </div>
+  <div class="col-12 p-0">
+    <div
+      class="mt-5 form-wrap d-flex flex-column justify-contnent-center align-items-center"
+    >
+      <form
+        (ngSubmit)="login()"
+        class="d-flex flex-column justify-content-center align-items-center"
+      >
+        <div class="mb-4">
+          <label for="Username">Username</label>
+          <input
+            type="text"
+            id="Username"
+            [(ngModel)]="usernameField"
+            name="usernameField"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="Password">Password</label>
+          <input
+            type="password"
+            id="Password"
+            [(ngModel)]="passwordField"
+            name="passwordField"
+          />
+        </div>
+        <button class="form-submit-button mb-3" type="submit">Sign in</button>
+      </form>
+      <p>
+        Don't have an account?
+        <a class="sign-up-a" (click)="signUp()">Sign up</a>.
+      </p>
+    </div>
+  </div>
+</div>
