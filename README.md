@@ -19,5 +19,4 @@ Features include editing, deleting, and copying code snippets with a single clic
 - **Frontend:** Angular
 - **Database:** PostgreSQL!
 
-
-[screen_1](https://github.com/user-attachments/assets/c8ba3beb-aa2b-4942-b0e9-463f16a84f7d)
+![screen_1](https://github.com/user-attachments/assets/c8af4e39-a0c1-4799-b5be-d3b33447d2a7)
