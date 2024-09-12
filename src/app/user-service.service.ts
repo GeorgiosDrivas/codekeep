@@ -26,7 +26,7 @@ interface Id {
   providedIn: 'root',
 })
 export class SharedService {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'https://codekeep-backend.onrender.com';
 
   constructor(private http: HttpClient) {}
 
@@ -48,10 +48,10 @@ export class SharedService {
     return this.http.get<any>(url);
   }
 
-  signUp(name: string, username: string, password: string): Observable<User> {
+  signUp(name: string, username: string, password: string): Observable<string> {
     const url = `${this.baseUrl}/addUser`;
     const body = { name, username, password };
-    return this.http.post<User>(url, body);
+    return this.http.post(url, body, { responseType: 'text' }); // Tell Angular to expect plain text
   }
 
   addSnippet(

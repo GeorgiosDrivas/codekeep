@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, inject, Renderer2 } from '@angular/core';
 import { SharedService } from '../user-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgFor, CommonModule } from '@angular/common';
@@ -32,7 +32,12 @@ export class DashboardComponent {
 
   route: ActivatedRoute = inject(ActivatedRoute);
 
-  constructor(private sharedService: SharedService, private router: Router) {}
+  constructor(
+    private sharedService: SharedService,
+    private router: Router,
+    private renderer: Renderer2,
+    private el: ElementRef
+  ) {}
 
   ngOnInit() {
     this.sharedService.userData$.subscribe((data) => {
@@ -98,17 +103,25 @@ export class DashboardComponent {
     });
   }
 
-  copy(text: string) {
-    // copy the content of a snippet
-    const element = document.querySelector(text);
+  copy(elementId: string) {
+    const element = this.el.nativeElement.querySelector(elementId);
 
-    if (
-      (element && element instanceof HTMLInputElement) ||
-      element instanceof HTMLTextAreaElement
-    ) {
-      element.select();
+    if (element) {
+      const content = element.innerText || element.textContent; // Get the content of the element
+
+      // Create a temporary textarea to copy the content
+      const textarea = document.createElement('textarea');
+      textarea.value = content;
+      document.body.appendChild(textarea);
+
+      // Select and copy the content
+      textarea.select();
       document.execCommand('copy');
-      element.setSelectionRange(0, 0);
+      document.body.removeChild(textarea); // Remove the temporary textarea
+
+      alert('Content copied to clipboard!');
+    } else {
+      console.error(`Element with ID ${elementId} not found`);
     }
   }
 
