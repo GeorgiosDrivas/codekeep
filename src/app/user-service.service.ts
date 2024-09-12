@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http'; // Import HttpClient
 import { Observable } from 'rxjs';
+import { URL } from './../../api';
 
 export interface User {
   id: number;
@@ -26,7 +27,7 @@ interface Id {
   providedIn: 'root',
 })
 export class SharedService {
-  private baseUrl = 'https://codekeep-backend.onrender.com';
+  private baseUrl = URL;
 
   constructor(private http: HttpClient) {}
 
