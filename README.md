@@ -20,3 +20,7 @@ Features include editing, deleting, and copying code snippets with a single clic
 - **Database:** PostgreSQL!
 
 ![screen_1](https://github.com/user-attachments/assets/c8af4e39-a0c1-4799-b5be-d3b33447d2a7)
+
+![screen_2](https://github.com/user-attachments/assets/768eac5c-c703-4508-ba09-9bf78fcd790d)
+
+![screen_3](https://github.com/user-attachments/assets/fadec521-f035-41b6-a124-c2bad747dd22)
