@@ -3,7 +3,6 @@ import { SignInComponent } from './app/sign-in/sign-in.component';
 import { HomePageComponent } from './app/home-page/home-page.component';
 import { DashboardComponent } from './app/dashboard/dashboard.component';
 import { SignupComponent } from './app/signup/signup.component';
-
 const routeConfig: Routes = [
   {
     path: '',
