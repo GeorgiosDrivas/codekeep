@@ -44,7 +44,7 @@ export class DashboardComponent {
       this.userData = data;
     });
 
-    this.sharedService.getSnippets(this.userData.id).subscribe((snippets) => {
+    this.sharedService.getSnippets(this.userData?.id).subscribe((snippets) => {
       this.allSnippets = snippets;
       this.userSnippets = snippets; // Show all snippets initially
     });
@@ -79,7 +79,7 @@ export class DashboardComponent {
     // send a request to the server to add a new snippet
     if (this.title != '' && this.language != '' && this.content != '') {
       this.sharedService
-        .addSnippet(this.title, this.language, this.content, this.userData.id)
+        .addSnippet(this.title, this.language, this.content, this.userData?.id)
         .subscribe({
           next: () => {
             window.location.reload();

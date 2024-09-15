@@ -34,7 +34,7 @@ export class SharedService {
   private userDataSource = new BehaviorSubject<any>(null);
   userData$ = this.userDataSource.asObservable();
 
-  setUserData(data: any) {
+  setUserData(data: User) {
     this.userDataSource.next(data);
   }
 
