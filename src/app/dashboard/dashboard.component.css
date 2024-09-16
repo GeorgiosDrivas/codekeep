@@ -47,3 +47,24 @@ label {
 .snippet-search-wrap {
   overflow-y: scroll;
 }
+
+.snippet-details {
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .sidebar-wrap {
+    height: 20.3vh;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .snippet-details {
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+  }
+}

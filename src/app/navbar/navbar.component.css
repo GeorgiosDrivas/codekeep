@@ -2,6 +2,8 @@
   background-color: #383636;
   color: #fff;
   min-height: 100px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-ul {
@@ -10,4 +12,12 @@
 
 .settings-svgs {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 450px) {
+  .nav-wrap {
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+  }
 }
