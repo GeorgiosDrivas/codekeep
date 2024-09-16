@@ -2,3 +2,9 @@
   width: 500px;
   margin: 20px auto;
 }
+
+@media only screen and (max-width: 450px) {
+  .heading-hr {
+    width: 250px;
+  }
+}

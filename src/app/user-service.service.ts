@@ -75,11 +75,10 @@ export class SharedService {
     id: number,
     title: string,
     language: string,
-    content: string,
-    userid: number
+    content: string
   ): Observable<Snippet> {
     const url = `${this.baseUrl}/snippets/${id}`;
-    const body = { title, language, content, userid };
+    const body = { title, language, content }; // Remove userid from body
     return this.http.put<Snippet>(url, body);
   }
 }

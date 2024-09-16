@@ -147,8 +147,7 @@ export class DashboardComponent {
         this.selectedSnippet.id,
         this.newTitle || this.selectedSnippet.title, // fallback to current values if empty
         this.newLanguage || this.selectedSnippet.language,
-        this.newContent || this.selectedSnippet.content,
-        this.userData.id
+        this.newContent || this.selectedSnippet.content
       )
       .subscribe({
         next: () => {
