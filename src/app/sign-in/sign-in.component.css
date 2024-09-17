@@ -27,3 +27,51 @@ input {
   background: transparent;
   border: none;
 }
+
+.loading {
+  width: 100%;
+  height: 84.4%;
+  filter: opacity(0.5);
+  z-index: 99999;
+  background-color: #f5efff;
+  position: absolute;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.loading .circle {
+  width: 100px;
+  height: 100px;
+  margin: 110px auto 0;
+  border: solid 10px #000000;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-transition: all 0.5s ease-in;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+
+  transition: all 0.5s ease-in;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

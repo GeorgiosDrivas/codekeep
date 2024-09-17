@@ -3,11 +3,12 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { NgModel, FormsModule } from '@angular/forms';
 import { SharedService } from '../user-service.service';
 import { User } from '../../types';
+import { NgIf, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [RouterModule, FormsModule],
+  imports: [RouterModule, FormsModule, CommonModule],
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css'],
 })
@@ -17,7 +18,9 @@ export class SignInComponent {
   usernameField = '';
   passwordField = '';
   errorMessage = '';
+
   showPasswordValue = false;
+  loading = false;
 
   constructor(private sharedService: SharedService, private router: Router) {}
 
@@ -26,12 +29,14 @@ export class SignInComponent {
   }
 
   login() {
+    this.loading = true;
     this.sharedService.login(this.usernameField, this.passwordField).subscribe({
       next: (user: User) => {
         this.sharedService.setUserData(user);
 
         localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/dashboard']);
+        this.loading = false;
       },
     });
   }
