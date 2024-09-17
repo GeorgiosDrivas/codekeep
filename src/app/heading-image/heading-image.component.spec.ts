@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HeadingImageComponent } from './heading-image.component';
 
 describe('HeadingImageComponent', () => {
@@ -8,9 +7,8 @@ describe('HeadingImageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeadingImageComponent]
-    })
-    .compileComponents();
+      imports: [HeadingImageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HeadingImageComponent);
     component = fixture.componentInstance;

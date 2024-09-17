@@ -3,13 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../user-service.service';
 import { NgModel, FormsModule } from '@angular/forms';
 
-export interface User {
-  id: number;
-  username: string;
-  name: string;
-  password?: string;
-}
-
 @Component({
   selector: 'app-signup',
   standalone: true,

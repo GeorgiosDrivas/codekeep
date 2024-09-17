@@ -3,25 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http'; // Import HttpClient
 import { Observable } from 'rxjs';
 import { URL } from './../../api';
-
-export interface User {
-  id: number;
-  username: string;
-  password?: string;
-  name: string;
-}
-
-export interface Snippet {
-  id: number;
-  title: string;
-  language: string;
-  content: string;
-  userid: number;
-}
-
-interface Id {
-  id: number;
-}
+import { Snippet, User } from '../types';
 
 @Injectable({
   providedIn: 'root',
@@ -52,7 +34,7 @@ export class SharedService {
   signUp(name: string, username: string, password: string): Observable<string> {
     const url = `${this.baseUrl}/addUser`;
     const body = { name, username, password };
-    return this.http.post(url, body, { responseType: 'text' }); // Tell Angular to expect plain text
+    return this.http.post(url, body, { responseType: 'text' });
   }
 
   addSnippet(
@@ -78,7 +60,7 @@ export class SharedService {
     content: string
   ): Observable<Snippet> {
     const url = `${this.baseUrl}/snippets/${id}`;
-    const body = { title, language, content }; // Remove userid from body
+    const body = { title, language, content };
     return this.http.put<Snippet>(url, body);
   }
 }

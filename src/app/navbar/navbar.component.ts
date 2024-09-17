@@ -11,7 +11,7 @@ import { NgIf, CommonModule } from '@angular/common';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  userData: any;
+  userData: any; // Must change type to something else
 
   constructor(private sharedService: SharedService, private router: Router) {}
 

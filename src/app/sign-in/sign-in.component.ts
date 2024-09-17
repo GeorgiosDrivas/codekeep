@@ -2,13 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { NgModel, FormsModule } from '@angular/forms';
 import { SharedService } from '../user-service.service';
-
-export interface User {
-  id: number;
-  username: string;
-  name: string;
-  password?: string;
-}
+import { User } from '../../types';
 
 @Component({
   selector: 'app-sign-in',
@@ -35,9 +29,7 @@ export class SignInComponent {
       next: (user: User) => {
         this.sharedService.setUserData(user);
 
-        // Store user data or token in localStorage
         localStorage.setItem('user', JSON.stringify(user));
-
         this.router.navigate(['/dashboard']);
       },
     });

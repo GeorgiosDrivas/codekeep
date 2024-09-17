@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SharedService } from './user-service.service';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { SharedService } from '../user-service.service';
 
 @Component({
   selector: 'app-root',
