@@ -17,6 +17,7 @@ export class SignInComponent {
   usernameField = '';
   passwordField = '';
   errorMessage = '';
+  showPasswordValue = false;
 
   constructor(private sharedService: SharedService, private router: Router) {}
 
@@ -33,5 +34,9 @@ export class SignInComponent {
         this.router.navigate(['/dashboard']);
       },
     });
+  }
+
+  showPassword() {
+    this.showPasswordValue = !this.showPasswordValue;
   }
 }
