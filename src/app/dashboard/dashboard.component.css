@@ -1,10 +1,8 @@
 .snippets-wrap {
-  border-top: 1px solid #000;
   cursor: pointer;
 }
 
 .sidebar-wrap {
-  border-right: 1px solid #000;
   height: 100%;
 }
 
@@ -47,7 +45,7 @@ label {
 }
 
 .snippet-search-wrap {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .snippet-details {
