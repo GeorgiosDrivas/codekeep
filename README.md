@@ -17,7 +17,7 @@ Features include editing, deleting, and copying code snippets with a single clic
 
 - **Backend:** Spring Boot (Java)
 - **Frontend:** Angular
-- **Database:** PostgreSQL!
+- **Database:** PostgreSQL
 
 ![screen_1](https://github.com/user-attachments/assets/c8af4e39-a0c1-4799-b5be-d3b33447d2a7)
 
