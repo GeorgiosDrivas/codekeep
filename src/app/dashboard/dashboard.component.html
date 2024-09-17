@@ -64,13 +64,46 @@
           </p>
         </div>
         <div class="d-flex justify-content-evenly align-items-center flex-row">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25px"
+              height="25px"
+              viewBox="0 0 24 24"
+              [class]="copied ? 'copied fade-out' : 'copied'"
+              fill="green"
+            >
+              <!-- Needs to be visible when clicking the button, only for seconds. Then invisible again-->
+              <path
+                d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+                stroke="#fff"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7.75 12L10.58 14.83L16.25 9.17004"
+                stroke="#fff"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <button
+              class="me-3 mb-0 action-btn"
+              (click)="copy('#snippetContent')"
+            >
+              Copy
+            </button>
+          </div>
           <button
-            class="me-3 mb-0 action-btn"
-            (click)="copy('#snippetContent')"
+            [class]="
+              isEditingSnippet
+                ? 'editing me-3 mb-0 action-btn'
+                : 'me-3 mb-0 action-btn'
+            "
+            (click)="allowEditSnippet()"
           >
-            Copy
-          </button>
-          <button class="me-3 mb-0 action-btn" (click)="allowEditSnippet()">
             Edit
           </button>
           <button class="mb-0 action-btn" (click)="removeSnippet()">

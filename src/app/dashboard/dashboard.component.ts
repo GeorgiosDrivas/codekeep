@@ -20,6 +20,7 @@ export class DashboardComponent {
   allSnippets: any;
   isCreatingNewSnippet: boolean = true;
   isEditingSnippet: boolean = false;
+  copied = false;
 
   // New snippet
   title = '';
@@ -98,6 +99,7 @@ export class DashboardComponent {
   }
 
   copy(elementId: string) {
+    this.copied = true;
     const element = this.el.nativeElement.querySelector(elementId);
 
     if (element) {
@@ -111,7 +113,9 @@ export class DashboardComponent {
       document.execCommand('copy');
       document.body.removeChild(textarea);
 
-      alert('Content copied to clipboard!');
+      setTimeout(() => {
+        this.copied = false;
+      }, 2000);
     } else {
       console.error(`Element with ID ${elementId} not found`);
     }

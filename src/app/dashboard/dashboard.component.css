@@ -68,3 +68,27 @@ label {
     flex-direction: column;
   }
 }
+
+.editing {
+  border-bottom: 1px solid #000;
+}
+
+.copied {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.copied.fade-out {
+  animation: fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
