@@ -20,9 +20,11 @@
 }
 
 .new-snippet-button {
-  background-color: #faff05;
+  background-color: #5bc0ed;
   border: none;
-  width: 150px;
+  border-radius: 15px;
+  color: #fff;
+  width: 180px;
   height: 40px;
   text-transform: uppercase;
 }

@@ -6,10 +6,6 @@
   align-items: center;
 }
 
-.nav-ul {
-  list-style-type: none;
-}
-
 .settings-svgs {
   cursor: pointer;
 }
@@ -20,4 +16,20 @@
     align-items: start;
     flex-direction: column;
   }
+}
+
+.logo {
+  width: auto;
+  height: 100px;
+}
+
+.nav-link {
+  background-color: #5bc0ed;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.userName {
+  font-size: 30px;
 }
