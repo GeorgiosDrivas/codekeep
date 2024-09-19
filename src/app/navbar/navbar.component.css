@@ -33,3 +33,7 @@
 .userName {
   font-size: 30px;
 }
+
+.logout {
+  cursor: pointer;
+}

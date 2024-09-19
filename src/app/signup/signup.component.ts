@@ -15,6 +15,7 @@ export class SignupComponent {
   usernameField: string = '';
   passwordField: string = '';
 
+  showPasswordValue = false;
   route: ActivatedRoute = inject(ActivatedRoute);
 
   constructor(private sharedService: SharedService, private router: Router) {}
@@ -27,5 +28,9 @@ export class SignupComponent {
           this.router.navigate(['/sign-in']);
         },
       });
+  }
+
+  showPassword() {
+    this.showPasswordValue = !this.showPasswordValue;
   }
 }
