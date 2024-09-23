@@ -14,23 +14,35 @@ export class SignupComponent {
   fullNameField: string = '';
   usernameField: string = '';
   passwordField: string = '';
+  confirmPasswordField: string = '';
 
   showPasswordValue = false;
+  showVerifyPasswordValue = false;
   route: ActivatedRoute = inject(ActivatedRoute);
 
   constructor(private sharedService: SharedService, private router: Router) {}
 
   submit() {
-    this.sharedService
-      .signUp(this.fullNameField, this.usernameField, this.passwordField)
-      .subscribe({
-        next: () => {
-          this.router.navigate(['/sign-in']);
-        },
-      });
+    if (this.passwordField === this.confirmPasswordField) {
+      this.sharedService
+        .signUp(this.fullNameField, this.usernameField, this.passwordField)
+        .subscribe({
+          next: () => {
+            this.router.navigate(['/sign-in']);
+          },
+        });
+    } else {
+      this.passwordField = '';
+      this.confirmPasswordField = '';
+      alert('Your password fields must match.');
+    }
   }
 
   showPassword() {
     this.showPasswordValue = !this.showPasswordValue;
+  }
+
+  showVerifyPassword() {
+    this.showVerifyPasswordValue = !this.showVerifyPasswordValue;
   }
 }
