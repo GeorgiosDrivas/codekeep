@@ -1,7 +1,7 @@
 <div class="nav-wrap d-flex px-2 px-lg-5">
   <img src="../../assets/CodeKeep.png" alt="CodeKeep logo" class="logo" />
   <ng-container *ngIf="userData; else homeLink">
-    <div class="d-flex align-items-end flex-column">
+    <div class="d-flex align-items-center">
       <h1 class="userName me-3" *ngIf="userData != []">
         {{ userData ? userData.name : "" }}
       </h1>
@@ -27,7 +27,6 @@
             />
           </svg> -->
       <div class="d-flex align-items-center logout" (click)="logOut()">
-        <p class="m-0 me-1">Logout</p>
         <svg
           width="35px"
           height="35px"

@@ -29,6 +29,8 @@
 
 label {
   display: block;
+  font-family: "Be Vietnam Pro";
+  font-weight: 600;
 }
 
 #content {
@@ -91,4 +93,16 @@ label {
     opacity: 0;
     visibility: hidden;
   }
+}
+
+.snippet-title {
+  font-size: 25px;
+  font-family: "Be Vietnam Pro";
+  font-weight: 600;
+  color: #000;
+}
+
+.snippet-language {
+  font-family: "Rosario";
+  font-size: 18px;
 }

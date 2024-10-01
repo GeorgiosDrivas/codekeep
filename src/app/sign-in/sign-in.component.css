@@ -2,18 +2,22 @@
   background-color: #5bc0ed;
   border: none;
   border-radius: 15px;
-  width: 150px;
-  height: 40px;
+  width: 130px;
+  height: 35px;
   color: #fff;
-  text-transform: uppercase;
+  font-family: "Lexend Exa";
 }
 
 label {
   display: block;
+  font-family: "Be Vietnam Pro";
 }
+
 .sign-up-a {
   color: #000;
   cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 input {
@@ -76,4 +80,14 @@ input {
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+
+.sign-in-text {
+  font-family: "Be Vietnam Pro";
+  font-weight: bold;
+}
+
+.create-acc {
+  font-family: "Be Vietnam Pro";
+  font-style: italic;
 }

@@ -18,8 +18,8 @@
           *ngFor="let snippet of userSnippets"
           (click)="selectSnippet(snippet)"
         >
-          <h2>{{ snippet.title }}</h2>
-          <p>{{ snippet.language }}</p>
+          <h2 class="snippet-title">{{ snippet.title }}</h2>
+          <p class="snippet-language">{{ snippet.language }}</p>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 .heading-hr {
-  width: 100px;
+  width: 150px;
   margin: 20px auto;
 }
 
@@ -7,4 +7,9 @@
   .heading-hr {
     width: 250px;
   }
+}
+
+#text {
+  font-family: "Text Me One";
+  font-size: 28px;
 }

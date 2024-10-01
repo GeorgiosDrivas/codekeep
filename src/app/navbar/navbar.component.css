@@ -27,11 +27,14 @@
   background-color: #5bc0ed;
   text-decoration: none;
   color: #fff;
+  font-family: "Lexend Exa";
+  font-size: 15px;
   border-radius: 15px;
 }
 
 .userName {
-  font-size: 30px;
+  font-size: 25px;
+  font-family: "Lexend Exa";
 }
 
 .logout {

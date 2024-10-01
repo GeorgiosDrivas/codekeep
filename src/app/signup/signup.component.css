@@ -1,5 +1,6 @@
 label {
   display: block;
+  font-family: "Be Vietnam Pro";
 }
 
 input {
@@ -9,11 +10,12 @@ input {
 .form-submit-button {
   background-color: #5bc0ed;
   border: none;
+  font-family: "Lexend Exa";
+  font-size: 15px;
   border-radius: 15px;
   color: #fff;
-  width: 150px;
-  height: 40px;
-  text-transform: uppercase;
+  width: 130px;
+  height: 35px;
 }
 
 .show-password {
@@ -24,4 +26,9 @@ input {
 .show-password button {
   background: transparent;
   border: none;
+}
+
+.sign-up-text {
+  font-family: "Be Vietnam Pro";
+  font-weight: bold;
 }
