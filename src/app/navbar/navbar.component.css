@@ -40,3 +40,18 @@
 .logout {
   cursor: pointer;
 }
+
+.settings-tab {
+  width: 500px;
+  height: 400px;
+  background-color: #fff;
+  border: 1px solid #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 100;
+}

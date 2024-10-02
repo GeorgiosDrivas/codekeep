@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { HttpClient } from '@angular/common/http'; // Import HttpClient
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { URL } from './../../api';
 import { Snippet, User } from '../types';
 
@@ -10,14 +9,15 @@ import { Snippet, User } from '../types';
 })
 export class SharedService {
   private baseUrl = URL;
-
+  userData: User | null = null; // Ensure userData is typed as User
   constructor(private http: HttpClient) {}
 
-  private userDataSource = new BehaviorSubject<any>(null);
+  private userDataSource = new BehaviorSubject<User | null>(null);
   userData$ = this.userDataSource.asObservable();
 
   setUserData(data: User) {
     this.userDataSource.next(data);
+    this.userData = data; // Keep a local reference for userData
   }
 
   login(username: string, password: string): Observable<User> {
@@ -62,5 +62,17 @@ export class SharedService {
     const url = `${this.baseUrl}/snippets/${id}`;
     const body = { title, language, content };
     return this.http.put<Snippet>(url, body);
+  }
+
+  changeName(id: number, name: string): Observable<User> {
+    const url = `${this.baseUrl}/users/${id}`;
+    const body: User = {
+      id: this.userData!.id,
+      username: this.userData!.username,
+      password: this.userData!.password,
+      name: name,
+    };
+    console.log('Payload being sent to server:', body); // Debug log
+    return this.http.put<User>(url, body);
   }
 }
