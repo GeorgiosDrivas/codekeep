@@ -40,7 +40,10 @@ export class NavbarComponent {
       // Call changeName from the service with id and new name
       this.sharedService.changeName(this.userData.id, this.newName).subscribe({
         next: () => {
-          window.location.reload();
+          // Update userData directly so the change reflects in the UI
+          this.userData.name = this.newName;
+          this.newName = ''; // Clear the new name input field if necessary
+          this.settingsToggle = false;
         },
         error: (err) => {
           console.error(err);

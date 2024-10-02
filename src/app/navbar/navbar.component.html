@@ -57,14 +57,13 @@
   <!-- Show anchor link if userData.id doesn't exist -->
   <ng-template #homeLink>
     <div class="d-flex">
-      <a href="/" [routerLink]="['']" class="text-decoration-none me-4 nav-link"
-        >Home</a
-      >
       <a
         href="/"
         [routerLink]="['sign-in']"
-        class="text-decoration-none nav-link"
-        >Sign in</a
+        class="text-decoration-none nav-link me-4"
+        >Sign in</a>
+      <a href="/" [routerLink]="['sign-up']" class="text-decoration-none nav-link"
+        >Sign up</a
       >
     </div>
   </ng-template>
