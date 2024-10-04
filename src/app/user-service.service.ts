@@ -32,7 +32,7 @@ export class SharedService {
   }
 
   signUp(name: string, username: string, password: string): Observable<string> {
-    const url = `${this.baseUrl}/addUser`;
+    const url = `${this.baseUrl}/users/add-user`;
     const body = { name, username, password };
     return this.http.post(url, body, { responseType: 'text' });
   }
@@ -43,13 +43,13 @@ export class SharedService {
     content: string,
     userid: number
   ): Observable<Snippet> {
-    const url = `${this.baseUrl}/addSnippet`;
+    const url = `${this.baseUrl}/snippets/add-snippet`;
     const body = { title, language, content, userid };
     return this.http.post<Snippet>(url, body);
   }
 
   removeSnippet(id: number): Observable<void> {
-    const url = `${this.baseUrl}/snippets/${id}`;
+    const url = `${this.baseUrl}/snippets/delete/${id}`;
     return this.http.delete<void>(url);
   }
 
@@ -59,13 +59,13 @@ export class SharedService {
     language: string,
     content: string
   ): Observable<Snippet> {
-    const url = `${this.baseUrl}/snippets/${id}`;
+    const url = `${this.baseUrl}/snippets/update/${id}`;
     const body = { title, language, content };
     return this.http.put<Snippet>(url, body);
   }
 
   changeName(id: number, name: string): Observable<User> {
-    const url = `${this.baseUrl}/users/${id}`;
+    const url = `${this.baseUrl}/users/update/${id}`;
     const body: User = {
       id: this.userData!.id,
       username: this.userData!.username,
