@@ -13,9 +13,10 @@ import { NgModel, FormsModule } from '@angular/forms';
 export class NavbarComponent {
   userData: any; // Must change type to something else
   settingsToggle = false;
-  newName = '';
+  newName = 'Aron K. Koutsis';
   newUsername = '';
   newPassword = '';
+  showPasswordValue = false;
 
   constructor(private sharedService: SharedService, private router: Router) {}
 
@@ -23,6 +24,9 @@ export class NavbarComponent {
     this.sharedService.userData$.subscribe((data) => {
       this.userData = data;
     });
+    this.newName = this.userData.name;
+    this.newUsername = this.userData.username;
+    this.newPassword = this.userData.password;
   }
 
   logOut() {
@@ -35,6 +39,10 @@ export class NavbarComponent {
 
   settings() {
     this.settingsToggle = !this.settingsToggle;
+  }
+
+  showPassword() {
+    this.showPasswordValue = !this.showPasswordValue;
   }
 
   editUser() {

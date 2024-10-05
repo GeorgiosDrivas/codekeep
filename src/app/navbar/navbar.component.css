@@ -23,12 +23,14 @@
   height: 100px;
 }
 
-.nav-link {
+.nav-link,
+.edit-user-button {
   background-color: #5bc0ed;
   text-decoration: none;
   color: #fff;
   font-family: "Lexend Exa";
   font-size: 15px;
+  border: none;
   border-radius: 15px;
 }
 
@@ -54,4 +56,23 @@
   border-radius: 8px;
   padding: 20px;
   z-index: 100;
+}
+
+.edit-user-button {
+  width: 280px;
+  height: 40px;
+}
+
+.settings-text {
+  font-size: 12px;
+}
+
+.show-password {
+  top: 24px;
+  right: 0;
+}
+
+.show-password button {
+  background: transparent;
+  border: none;
 }
