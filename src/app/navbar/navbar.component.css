@@ -49,7 +49,7 @@
   background-color: #fff;
   border: 1px solid #000;
   position: absolute;
-  top: 50%;
+  top: 51.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -74,5 +74,14 @@
 
 .show-password button {
   background: transparent;
+  border: none;
+}
+
+.close-btn {
+  right: 20px;
+  top: 30px;
+}
+.close-btn button {
+  background-color: transparent;
   border: none;
 }
