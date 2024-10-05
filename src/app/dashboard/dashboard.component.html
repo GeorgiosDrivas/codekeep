@@ -1,10 +1,10 @@
 <div class="row m-0 p-0">
-  <div class="col-12 col-lg-2 px-2 ps-lg-0">
+  <div class="col-12 col-lg-3 px-2 ps-lg-0">
     <div
       class="sidebar-wrap d-flex flex-column justify-content-between align-items-center"
     >
       <div class="w-100 snippet-search-wrap">
-        <div class="snippet-search mt-3 mb-4 text-center">
+        <div class="snippet-search mt-3 mb-4 ms-2">
           <input
             type="text"
             name="snippetSearch"
@@ -22,18 +22,18 @@
           <p class="snippet-language">{{ snippet.language }}</p>
         </div>
       </div>
-    </div>
-    <div>
-      <button
-        class="new-snippet-button mb-4 mt-3"
-        (click)="createNewSnippet()"
-        *ngIf="!isCreatingNewSnippet"
-      >
-        New Snippet
-      </button>
+      <div class="w-100 ps-2">
+        <button
+          class="new-snippet-button mb-1 mt-3"
+          (click)="createNewSnippet()"
+          *ngIf="!isCreatingNewSnippet"
+        >
+          New Snippet
+        </button>
+      </div>
     </div>
   </div>
-  <div class="col-12 col-lg-10">
+  <div class="col-12 col-lg-9">
     <div
       *ngIf="
         !isCreatingNewSnippet && selectedSnippet;
@@ -42,7 +42,7 @@
       "
     ></div>
     <ng-template #hasSnippet>
-      <div class="snippet-details d-flex mt-4">
+      <div class="snippet-details d-flex mt-2">
         <div>
           <p class="selected-snippet-title">
             Title:
@@ -128,7 +128,7 @@
       </button>
     </ng-template>
     <ng-template #newSnippetTemplate>
-      <form (submit)="addNewSnippet()" id="newSnippetForm" class="mt-5">
+      <form (submit)="addNewSnippet()" id="newSnippetForm" class="mt-2">
         <div>
           <label for="title">Title</label>
           <input

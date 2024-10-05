@@ -8,7 +8,7 @@
 
 .code-wrap {
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   border: 1px solid #000;
 }
 
@@ -35,6 +35,7 @@ label {
 
 #content {
   width: 100%;
+  height: 45vh;
 }
 
 #newSnippetForm input {
