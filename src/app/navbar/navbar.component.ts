@@ -14,6 +14,8 @@ export class NavbarComponent {
   userData: any; // Must change type to something else
   settingsToggle = false;
   newName = '';
+  newUsername = '';
+  newPassword = '';
 
   constructor(private sharedService: SharedService, private router: Router) {}
 
@@ -35,21 +37,30 @@ export class NavbarComponent {
     this.settingsToggle = !this.settingsToggle;
   }
 
-  changeName() {
+  editUser() {
     if (this.newName.length > 0) {
       // Call changeName from the service with id and new name
-      this.sharedService.changeName(this.userData.id, this.newName).subscribe({
-        next: () => {
-          // Update userData directly so the change reflects in the UI
-          this.userData.name = this.newName;
-          this.newName = ''; // Clear the new name input field if necessary
-          this.settingsToggle = false;
-        },
-        error: (err) => {
-          console.error(err);
-          alert("Error updating user's profile name: " + err.message);
-        },
-      });
+      this.sharedService
+        .editUser(
+          this.userData.id,
+          this.newName,
+          this.newUsername,
+          this.newPassword
+        )
+        .subscribe({
+          next: () => {
+            // Update userData directly so the change reflects in the UI
+            this.userData.name = this.newName;
+            this.newName = '';
+            this.newUsername = '';
+            this.newPassword = ''; // Clear the new name input field if necessary
+            this.settingsToggle = false;
+          },
+          error: (err) => {
+            console.error(err);
+            alert("Error updating user's profile name: " + err.message);
+          },
+        });
     }
   }
 }
