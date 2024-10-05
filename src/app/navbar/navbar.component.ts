@@ -23,10 +23,10 @@ export class NavbarComponent {
   ngOnInit() {
     this.sharedService.userData$.subscribe((data) => {
       this.userData = data;
+      this.newName = this.userData?.name;
+      this.newUsername = this.userData?.username;
+      this.newPassword = this.userData?.password;
     });
-    this.newName = this.userData.name;
-    this.newUsername = this.userData.username;
-    this.newPassword = this.userData.password;
   }
 
   logOut() {

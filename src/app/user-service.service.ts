@@ -9,7 +9,7 @@ import { Snippet, User } from '../types';
 })
 export class SharedService {
   private baseUrl = URL;
-  userData: User | null = null; // Ensure userData is typed as User
+  userData: User | null = null;
   constructor(private http: HttpClient) {}
 
   private userDataSource = new BehaviorSubject<User | null>(null);
@@ -17,7 +17,7 @@ export class SharedService {
 
   setUserData(data: User) {
     this.userDataSource.next(data);
-    this.userData = data; // Keep a local reference for userData
+    this.userData = data;
   }
 
   login(username: string, password: string): Observable<User> {

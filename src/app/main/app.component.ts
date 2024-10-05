@@ -17,12 +17,13 @@ export class AppComponent {
   constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
-    // localStorage.clear();
-    const storedUser = localStorage.getItem('user');
-
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      this.sharedService.setUserData(user);
+    if (typeof window !== 'undefined' && window.localStorage) {
+      // localStorage.clear();
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+        this.sharedService.setUserData(user);
+      }
     }
   }
 }
