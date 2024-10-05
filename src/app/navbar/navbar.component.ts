@@ -43,9 +43,9 @@ export class NavbarComponent {
       this.sharedService
         .editUser(
           this.userData.id,
-          this.newName,
-          this.newUsername,
-          this.newPassword
+          this.newName ? this.newName : this.userData.name,
+          this.newUsername ? this.newUsername : this.userData.userName,
+          this.newPassword ? this.newPassword : this.userData.password
         )
         .subscribe({
           next: () => {

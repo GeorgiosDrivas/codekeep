@@ -64,13 +64,18 @@ export class SharedService {
     return this.http.put<Snippet>(url, body);
   }
 
-  editUser(id: number, name: string, username: string, password: string): Observable<User> {
+  editUser(
+    id: number,
+    name: string,
+    username: string,
+    password: string
+  ): Observable<User> {
     const url = `${this.baseUrl}/users/update/${id}`;
     const body: User = {
       id: this.userData!.id,
-      username: username ? username : this.userData!.username,
-      password: password ? password : this.userData!.password,
-      name: name ? name : this.userData!.name,
+      name: name,
+      username: username,
+      password: password,
     };
     console.log('Payload being sent to server:', body); // Debug log
     return this.http.put<User>(url, body);
