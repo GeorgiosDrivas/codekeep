@@ -77,7 +77,7 @@ export class SharedService {
       username: username,
       password: password,
     };
-    console.log('Payload being sent to server:', body); // Debug log
+    console.log('Payload being sent to server:', body);
     return this.http.put<User>(url, body);
   }
 }

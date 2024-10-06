@@ -61,7 +61,7 @@ export class NavbarComponent {
             this.userData.name = this.newName;
             this.newName = '';
             this.newUsername = '';
-            this.newPassword = ''; // Clear the new name input field if necessary
+            this.newPassword = '';
             this.settingsToggle = false;
           },
           error: (err) => {

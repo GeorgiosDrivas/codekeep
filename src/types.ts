@@ -12,7 +12,3 @@ export interface Snippet {
   content: string;
   userid: number;
 }
-
-interface Id {
-  id: number;
-}
