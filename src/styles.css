@@ -13,3 +13,19 @@ label {
   display: block;
   font-family: "Be Vietnam Pro";
 }
+
+.form-submit-button {
+  background-color: #5bc0ed;
+  border: none;
+  font-family: "Lexend Exa";
+  font-size: 15px;
+  border-radius: 15px;
+  color: #fff;
+  width: 130px;
+  height: 35px;
+}
+
+.sign-in-text {
+  font-family: "Be Vietnam Pro";
+  font-weight: bold;
+}

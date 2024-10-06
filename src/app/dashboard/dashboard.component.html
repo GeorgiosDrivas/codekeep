@@ -16,6 +16,7 @@
         </div>
         <div
           class="snippets-wrap ps-2"
+          role="button"
           *ngFor="let snippet of userSnippets"
           (click)="selectSnippet(snippet)"
         >
@@ -45,7 +46,7 @@
     <ng-template #hasSnippet>
       <div class="snippet-details d-flex mt-2">
         <div>
-          <p class="selected-snippet-title">
+          <p class="selected-snippet-title m-0">
             Title:
             <span
               [attr.contenteditable]="isEditingSnippet"
@@ -112,7 +113,7 @@
           </button>
         </div>
       </div>
-      <div class="mt-1 code-wrap ps-2" id="snippetContent">
+      <div class="mt-1 code-wrap w-100 ps-2" id="snippetContent">
         <pre
           [attr.contenteditable]="isEditingSnippet"
           (blur)="onContentBlur($event)"
@@ -158,6 +159,7 @@
             required
             name="content"
             id="content"
+            class="w-100"
             [(ngModel)]="content"
             rows="23"
             placeholder="The content of your snippet"

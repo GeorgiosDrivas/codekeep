@@ -1,4 +1,4 @@
-<div *ngIf="loading" class="loading">
+<div *ngIf="loading" class="loading position-absolute">
   <div class="circle"></div>
 </div>
 <div class="row p-0 m-0">
@@ -70,7 +70,7 @@
       </form>
       <p class="create-acc">
         Don't have an account?
-        <a class="sign-up-a" (click)="signUp()">Sign up</a>.
+        <a class="sign-up-a" role="button" (click)="signUp()">Sign up</a>.
       </p>
     </div>
   </div>

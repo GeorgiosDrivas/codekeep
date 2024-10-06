@@ -1,7 +1,3 @@
-.snippets-wrap {
-  cursor: pointer;
-}
-
 .sidebar-wrap {
   height: 100%;
   background-color: #383636;
@@ -9,14 +5,12 @@
 }
 
 .code-wrap {
-  width: 100%;
   height: 60vh;
   border: 1px solid #000;
 }
 
 .selected-snippet-title {
   font-size: 15px;
-  margin: 0;
 }
 
 .new-snippet-button {
@@ -34,7 +28,6 @@ label {
 }
 
 #content {
-  width: 100%;
   height: 45vh;
 }
 

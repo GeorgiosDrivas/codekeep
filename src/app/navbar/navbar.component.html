@@ -1,4 +1,4 @@
-<div *ngIf="settingsToggle" class="settings-tab">
+<div *ngIf="settingsToggle" class="settings-tab position-absolute">
   <div class="position-absolute close-btn">
     <button (click)="settings()">
       <svg
@@ -87,16 +87,25 @@
   </button>
 </div>
 <div class="nav-wrap d-flex px-2 px-lg-5">
-  <img src="../../assets/CodeKeep.png" alt="CodeKeep logo" class="logo" />
+  <img
+    src="../../assets/CodeKeep.png"
+    alt="CodeKeep logo"
+    class="logo w-auto"
+  />
   <ng-container *ngIf="userData; else homeLink">
     <div class="d-flex align-items-center">
       <h1 class="userName me-3" *ngIf="userData != []">
         {{ userData ? userData.name : "" }}
       </h1>
-      <div class="d-flex align-items-center logout" (click)="settings()">
+      <div
+        class="d-flex align-items-center logout"
+        role="button"
+        (click)="settings()"
+      >
         <svg
           width="30px"
           class="me-4 settings-svgs"
+          role="button"
           height="30px"
           viewBox="0 0 24 24"
           fill="#fff"
@@ -116,11 +125,16 @@
           />
         </svg>
       </div>
-      <div class="d-flex align-items-center logout" (click)="logOut()">
+      <div
+        class="d-flex align-items-center logout"
+        role="button"
+        (click)="logOut()"
+      >
         <svg
           width="35px"
           height="35px"
           class="settings-svgs"
+          role="button"
           viewBox="0 -0.5 25 25"
           fill="#fff"
           xmlns="http://www.w3.org/2000/svg"
