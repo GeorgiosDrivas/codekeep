@@ -4,6 +4,8 @@
 
 .sidebar-wrap {
   height: 100%;
+  background-color: #383636;
+  color: #fff;
 }
 
 .code-wrap {
@@ -100,10 +102,16 @@ label {
   font-size: 25px;
   font-family: "Be Vietnam Pro";
   font-weight: 600;
-  color: #000;
 }
 
 .snippet-language {
   font-family: "Rosario";
   font-size: 18px;
+}
+
+.sidebar {
+  height: 82.8vh;
+}
+.snippet-search {
+  width: 180px;
 }

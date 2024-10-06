@@ -1,5 +1,5 @@
 <div class="row m-0 p-0">
-  <div class="col-12 col-lg-3 px-2 ps-lg-0">
+  <div class="col-12 col-lg-2 px-2 ps-lg-0 sidebar">
     <div
       class="sidebar-wrap d-flex flex-column justify-content-between align-items-center"
     >
@@ -8,6 +8,7 @@
           <input
             type="text"
             name="snippetSearch"
+            class="snippet-search"
             placeholder="Search by snippet name"
             [(ngModel)]="snippetSearch"
             (ngModelChange)="filterSnippets()"
@@ -33,7 +34,7 @@
       </div>
     </div>
   </div>
-  <div class="col-12 col-lg-9">
+  <div class="col-12 col-lg-10">
     <div
       *ngIf="
         !isCreatingNewSnippet && selectedSnippet;
