@@ -8,7 +8,6 @@ import { SharedService } from '../user-service.service';
   standalone: true,
   imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'snippetsFrontend';

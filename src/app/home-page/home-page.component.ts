@@ -7,6 +7,5 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [HeadingTextComponent, RouterModule],
   templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.css',
 })
 export class HomePageComponent {}

@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.show-password {
+  top: 24px;
+  right: 0;
+}
+
+.show-password button {
+  background: transparent;
+  border: none;
+}
+
+label {
+  display: block;
+  font-family: "Be Vietnam Pro";
+}

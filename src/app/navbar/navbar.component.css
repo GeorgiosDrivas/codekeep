@@ -67,16 +67,6 @@
   font-size: 12px;
 }
 
-.show-password {
-  top: 24px;
-  right: 0;
-}
-
-.show-password button {
-  background: transparent;
-  border: none;
-}
-
 .close-btn {
   right: 20px;
   top: 30px;

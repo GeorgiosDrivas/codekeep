@@ -8,11 +8,6 @@
   font-family: "Lexend Exa";
 }
 
-label {
-  display: block;
-  font-family: "Be Vietnam Pro";
-}
-
 .sign-up-a {
   color: #000;
   cursor: pointer;
@@ -22,16 +17,6 @@ label {
 
 input {
   width: 250px;
-}
-
-.show-password {
-  top: 24px;
-  right: 0;
-}
-
-.show-password button {
-  background: transparent;
-  border: none;
 }
 
 .loading {
