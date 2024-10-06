@@ -101,8 +101,10 @@ label {
 }
 
 .sidebar {
-  height: 82.8vh;
+  height: 89.4vh;
 }
 .snippet-search {
-  width: 180px;
+  width: 190px;
+  border: none;
+  padding: 5px 10px;
 }

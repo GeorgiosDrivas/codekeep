@@ -3,6 +3,6 @@
     <div className="col-12 p-0"><navbar></navbar></div>
   </div>
 </div>
-<div class="user ? 'container-fluid' : 'container'">
+<div [class]="user ? 'container-fluid p-0' : 'container'">
   <router-outlet></router-outlet>
 </div>
