@@ -1,8 +1,8 @@
-import { Component, ElementRef, inject, Renderer2 } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { UserService } from '../services/user-service.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NgFor, CommonModule } from '@angular/common';
-import { NgModel, FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { SnippetService } from '../services/snippet.service';
 
 @Component({

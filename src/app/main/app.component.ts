@@ -17,7 +17,6 @@ export class AppComponent {
 
   ngOnInit() {
     if (typeof window !== 'undefined' && window.localStorage) {
-      // localStorage.clear();
       const storedUser = localStorage.getItem('user');
       if (storedUser) {
         const user = JSON.parse(storedUser);

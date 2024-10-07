@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../services/user-service.service';
-import { NgIf, CommonModule } from '@angular/common';
-import { NgModel, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'navbar',
   standalone: true,
@@ -13,7 +13,7 @@ import { NgModel, FormsModule } from '@angular/forms';
 export class NavbarComponent {
   userData: any; // Must change type to something else
   settingsToggle = false;
-  newName = 'Aron K. Koutsis';
+  newName = 'New Name';
   newUsername = '';
   newPassword = '';
   showPasswordValue = false;
