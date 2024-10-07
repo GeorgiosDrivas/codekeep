@@ -1,8 +1,9 @@
 import { Component, ElementRef, inject, Renderer2 } from '@angular/core';
-import { SharedService } from '../user-service.service';
+import { UserService } from '../user-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgFor, CommonModule } from '@angular/common';
 import { NgModel, FormsModule } from '@angular/forms';
+import { SnippetService } from '../snippet.service';
 
 @Component({
   selector: 'dashboard',
@@ -35,18 +36,17 @@ export class DashboardComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
 
   constructor(
-    private sharedService: SharedService,
-    private router: Router,
-    private renderer: Renderer2,
+    private userService: UserService,
+    private snippetService: SnippetService,
     private el: ElementRef
   ) {}
 
   ngOnInit() {
-    this.sharedService.userData$.subscribe((data) => {
+    this.userService.userData$.subscribe((data) => {
       this.userData = data;
     });
 
-    this.sharedService.getSnippets(this.userData?.id).subscribe((snippets) => {
+    this.snippetService.getSnippets(this.userData?.id).subscribe((snippets) => {
       this.allSnippets = snippets;
       this.userSnippets = snippets;
     });
@@ -75,7 +75,7 @@ export class DashboardComponent {
 
   addNewSnippet() {
     if (this.title != '' && this.language != '' && this.content != '') {
-      this.sharedService
+      this.snippetService
         .addSnippet(this.title, this.language, this.content, this.userData?.id)
         .subscribe({
           next: () => {
@@ -86,7 +86,7 @@ export class DashboardComponent {
   }
 
   removeSnippet() {
-    this.sharedService.removeSnippet(this.selectedSnippet?.id).subscribe({
+    this.snippetService.removeSnippet(this.selectedSnippet?.id).subscribe({
       next: () => {
         setInterval(() => {
           window.location.reload();
@@ -138,7 +138,7 @@ export class DashboardComponent {
   }
 
   editSnippet() {
-    this.sharedService
+    this.snippetService
       .editSnippet(
         this.selectedSnippet.id,
         this.newTitle || this.selectedSnippet.title,

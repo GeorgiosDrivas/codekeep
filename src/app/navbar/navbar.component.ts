@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { SharedService } from '../user-service.service';
+import { UserService } from '../user-service.service';
 import { NgIf, CommonModule } from '@angular/common';
 import { NgModel, FormsModule } from '@angular/forms';
 @Component({
@@ -18,10 +18,10 @@ export class NavbarComponent {
   newPassword = '';
   showPasswordValue = false;
 
-  constructor(private sharedService: SharedService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
-    this.sharedService.userData$.subscribe((data) => {
+    this.userService.userData$.subscribe((data) => {
       this.userData = data;
       this.newName = this.userData?.name;
       this.newUsername = this.userData?.username;
@@ -48,7 +48,7 @@ export class NavbarComponent {
   editUser() {
     if (this.newName.length > 0) {
       // Call changeName from the service with id and new name
-      this.sharedService
+      this.userService
         .editUser(
           this.userData.id,
           this.newName ? this.newName : this.userData.name,

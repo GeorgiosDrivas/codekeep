@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { NgModel, FormsModule } from '@angular/forms';
-import { SharedService } from '../user-service.service';
+import { UserService } from '../user-service.service';
 import { User } from '../../types';
 import { NgIf, CommonModule } from '@angular/common';
 
@@ -22,7 +22,7 @@ export class SignInComponent {
   showPasswordValue = false;
   loading = false;
 
-  constructor(private sharedService: SharedService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   signUp() {
     this.router.navigate(['/sign-up']);
@@ -30,9 +30,9 @@ export class SignInComponent {
 
   login() {
     this.loading = true;
-    this.sharedService.login(this.usernameField, this.passwordField).subscribe({
+    this.userService.login(this.usernameField, this.passwordField).subscribe({
       next: (user: User) => {
-        this.sharedService.setUserData(user);
+        this.userService.setUserData(user);
 
         localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/dashboard']);

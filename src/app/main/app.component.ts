@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { SharedService } from '../user-service.service';
+import { UserService } from '../user-service.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'snippetsFrontend';
   user = {};
 
-  constructor(private sharedService: SharedService) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     if (typeof window !== 'undefined' && window.localStorage) {
@@ -21,7 +21,7 @@ export class AppComponent {
       const storedUser = localStorage.getItem('user');
       if (storedUser) {
         const user = JSON.parse(storedUser);
-        this.sharedService.setUserData(user);
+        this.userService.setUserData(user);
       }
     }
   }

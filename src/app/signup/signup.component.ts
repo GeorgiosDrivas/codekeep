@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SharedService } from '../user-service.service';
+import { UserService } from '../user-service.service';
 import { NgModel, FormsModule } from '@angular/forms';
 
 @Component({
@@ -20,11 +20,11 @@ export class SignupComponent {
   showVerifyPasswordValue = false;
   route: ActivatedRoute = inject(ActivatedRoute);
 
-  constructor(private sharedService: SharedService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   submit() {
     if (this.passwordField === this.confirmPasswordField) {
-      this.sharedService
+      this.userService
         .signUp(this.fullNameField, this.usernameField, this.passwordField)
         .subscribe({
           next: () => {
