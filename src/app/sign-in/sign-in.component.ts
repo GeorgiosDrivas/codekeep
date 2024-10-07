@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { NgModel, FormsModule } from '@angular/forms';
-import { UserService } from '../user-service.service';
+import { UserService } from '../services/user-service.service';
 import { User } from '../../types';
 import { NgIf, CommonModule } from '@angular/common';
 

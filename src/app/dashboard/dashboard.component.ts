@@ -1,9 +1,9 @@
 import { Component, ElementRef, inject, Renderer2 } from '@angular/core';
-import { UserService } from '../user-service.service';
+import { UserService } from '../services/user-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgFor, CommonModule } from '@angular/common';
 import { NgModel, FormsModule } from '@angular/forms';
-import { SnippetService } from '../snippet.service';
+import { SnippetService } from '../services/snippet.service';
 
 @Component({
   selector: 'dashboard',

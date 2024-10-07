@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { UserService } from '../user-service.service';
+import { UserService } from '../services/user-service.service';
 import { NgIf, CommonModule } from '@angular/common';
 import { NgModel, FormsModule } from '@angular/forms';
 @Component({
