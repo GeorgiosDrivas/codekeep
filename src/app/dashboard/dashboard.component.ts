@@ -155,4 +155,8 @@ export class DashboardComponent {
         },
       });
   }
+
+  trackByFn(index: number, item: any): number {
+    return item.id;
+  }
 }

@@ -24,7 +24,7 @@
         <div
           class="snippets-wrap ps-2"
           role="button"
-          *ngFor="let snippet of userSnippets"
+          *ngFor="let snippet of userSnippets; trackBy: trackByFn"
           (click)="selectSnippet(snippet)"
         >
           <h2 class="snippet-title">{{ snippet.title }}</h2>
