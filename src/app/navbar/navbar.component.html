@@ -1,6 +1,6 @@
 <div *ngIf="settingsToggle" class="settings-tab position-absolute">
   <div class="position-absolute close-btn">
-    <button (click)="settings()">
+    <button (click)="settings()" type="button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="30px"
@@ -153,12 +153,14 @@
     <div class="d-flex">
       <a
         href="/"
+        title="Sign in"
         [routerLink]="['sign-in']"
         class="text-decoration-none nav-link me-4"
         >Sign in</a
       >
       <a
         href="/"
+        title="Sign up"
         [routerLink]="['sign-up']"
         class="text-decoration-none nav-link"
         >Sign up</a
