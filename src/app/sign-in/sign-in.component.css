@@ -15,7 +15,7 @@ input {
 .loading {
   width: 100%;
   height: -webkit-fill-available;
-  filter: opacity(0.5);
+  filter: opacity(0.8);
   z-index: 99999;
   background-color: #f5efff;
 }
@@ -61,4 +61,8 @@ input {
 
 .create-acc {
   font-family: "Be Vietnam Pro";
+}
+
+.loading-message {
+  font-size: 25px;
 }
