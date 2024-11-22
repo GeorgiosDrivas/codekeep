@@ -124,3 +124,12 @@ label {
     flex-direction: column;
   }
 }
+
+.clear-fields button {
+  background: transparent;
+  border: none;
+}
+
+.clear-fields button:hover {
+  text-decoration: underline;
+}

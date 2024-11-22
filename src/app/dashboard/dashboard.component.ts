@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject } from '@angular/core';
+import { Component, ElementRef, inject, Input, OnChanges } from '@angular/core';
 import { UserService } from '../services/user-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -32,6 +32,7 @@ export class DashboardComponent {
   newTitle = '';
   newLanguage = '';
   newContent = '';
+  clearFields = false;
 
   route: ActivatedRoute = inject(ActivatedRoute);
 
@@ -50,6 +51,18 @@ export class DashboardComponent {
       this.allSnippets = snippets;
       this.userSnippets = snippets;
     });
+  }
+
+  checkFields(): void {
+    this.clearFields =
+      !this.newTitle || !this.newLanguage || !this.newContent ? true : false;
+  }
+
+  clearFieldsFn(): void {
+    this.content = '';
+    this.language = '';
+    this.title = '';
+    this.clearFields = false;
   }
 
   filterSnippets() {

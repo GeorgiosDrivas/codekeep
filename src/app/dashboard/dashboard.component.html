@@ -134,6 +134,9 @@
       </button>
     </ng-template>
     <ng-template #newSnippetTemplate>
+      <div class="clear-fields my-4" *ngIf="clearFields">
+        <button (click)="clearFieldsFn()">Clear Fields</button>
+      </div>
       <form (submit)="addNewSnippet()" id="newSnippetForm" class="mt-2">
         <div>
           <label for="title">Title</label>
@@ -142,6 +145,7 @@
             id="title"
             name="titleField"
             [(ngModel)]="title"
+            (ngModelChange)="checkFields()"
             required
             placeholder="The title of your snippet"
           />
@@ -153,6 +157,7 @@
             type="text"
             id="language"
             [(ngModel)]="language"
+            (ngModelChange)="checkFields()"
             placeholder="The programming language"
             name="language"
           />
@@ -165,6 +170,7 @@
             id="content"
             class="w-100"
             [(ngModel)]="content"
+            (ngModelChange)="checkFields()"
             rows="23"
             placeholder="The content of your snippet"
           ></textarea>
