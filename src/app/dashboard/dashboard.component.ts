@@ -5,6 +5,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SnippetService } from '../services/snippet.service';
 
+interface SingleSnippet {
+  id: number;
+  title: string;
+  language: string;
+  content: string;
+  userid: number;
+}
+
 @Component({
   selector: 'dashboard',
   standalone: true,
@@ -15,10 +23,16 @@ import { SnippetService } from '../services/snippet.service';
 export class DashboardComponent {
   // Change any types to something else
   userData: any;
-  userSnippets: any;
-  selectedSnippet: any;
+  userSnippets: SingleSnippet[] = [];
+  selectedSnippet: SingleSnippet = {
+    id: 0,
+    language: '',
+    title: '',
+    content: '',
+    userid: 0,
+  };
   snippetSearch: string = '';
-  allSnippets: any;
+  allSnippets: SingleSnippet[] = [];
   isCreatingNewSnippet: boolean = true;
   isEditingSnippet: boolean = false;
   copied = false;
@@ -77,7 +91,13 @@ export class DashboardComponent {
 
   createNewSnippet() {
     this.isCreatingNewSnippet = true;
-    this.selectedSnippet = null;
+    this.selectedSnippet = {
+      id: 0,
+      language: '',
+      title: '',
+      content: '',
+      userid: 0,
+    };
   }
 
   selectSnippet(snippet: any) {
